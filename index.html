@@ -5,163 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JUS DIFFERENT</title>
   <meta name="description" content="I build products, essays, and campaigns that turn attention into obsession." />
-
-  <!-- OG/Twitter (optional) -->
-  <meta property="og:title" content="JUS DIFFERENT" />
-  <meta property="og:description" content="I build products, essays, and campaigns that turn attention into obsession." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #0b0b0c;         /* charcoal / blackish / blue-ish */
-      --ink: #f4f6ff;        /* off-white that pairs with blue-black */
-      --muted: #b8c0d9;      /* soft desaturated blue-gray */
-      --link: #93c5fd;       /* light blue */
-      --link-hover: #bfdbfe; /* lighter on hover */
-      --rule: rgba(255,255,255,0.08);
-      --maxw: 960px;
-      --pad: 22px;
-      --radius: 12px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body{
+    body {
       margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background: radial-gradient(1200px 800px at 20% -10%, rgba(147,197,253,0.10), transparent 60%),
-                  radial-gradient(1000px 600px at 110% 20%, rgba(14,165,233,0.10), transparent 60%),
-                  var(--bg);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #2a2c33; /* solid background */
+      color: #e6e6e6;
+      line-height: 1.6;
+      font-size: 16px;
     }
-
-    a{ color: var(--link); text-decoration: none; }
-    a:hover{ color: var(--link-hover); text-decoration: underline; }
-
-    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 56px var(--pad) 96px; }
-
-    header{ margin-bottom: 28px; }
-    .title{
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    h1 {
+      font-size: 28px;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      font-size: clamp(28px, 7vw, 52px);
-      text-transform: uppercase;
+      margin: 0 0 12px;
     }
-    .subtitle{
-      color: var(--muted);
-      font-weight: 600;
-      margin-top: 6px;
+    h2 {
       font-size: 14px;
-    }
-
-    .section{
-      border-top: 1px solid var(--rule);
-      padding-top: 18px;
-      margin-top: 22px;
-    }
-    .h{
+      font-weight: 600;
+      margin: 40px 0 12px;
       text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 800;
-      color: var(--muted);
-      font-size: 13px;
-      margin: 0 0 10px;
+      color: #a0a0a0;
+      letter-spacing: 0.05em;
     }
-
-    /* Lists */
-    ul.clean{ margin: 12px 0 0; padding: 0; list-style: none; }
-    ul.clean li{ margin: 10px 0; padding-left: 14px; position: relative; }
-    ul.clean li::before{
-      content: "▸";
-      position: absolute; left: 0; top: 0;
-      color: var(--link);
-      font-weight: 700;
+    p, li {
+      margin: 0 0 12px;
     }
-
-    /* Grid for “working on / results” if needed later */
-    .grid{ display: grid; gap: 18px; grid-template-columns: 1fr; }
-    @media (min-width: 860px){ .grid{ grid-template-columns: 1.2fr .8fr; } }
-
-    .block{
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      padding: 18px;
+    ul {
+      list-style: disc;
+      padding-left: 20px;
     }
-
-    .proj{ margin: 14px 0 0; }
-    .proj h3{ margin: 0 0 4px; font-size: 18px; font-weight: 800; }
-    .meta{ color: var(--muted); font-size: 13px; margin: 0 0 6px; }
-
-    footer{
-      border-top: 1px solid var(--rule);
-      margin-top: 26px; padding-top: 16px;
-      color: var(--muted);
-      font-weight: 600; font-size: 13px;
+    a {
+      color: #9ad1ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 48px;
+      font-size: 14px;
+      color: #a0a0a0;
     }
   </style>
 </head>
-
 <body>
-  <main class="wrap">
-    <header>
-      <div class="title">JUS DIFFERENT</div>
-      <div class="subtitle">marketing psychology • product experiments • growth systems</div>
-    </header>
+  <main>
+    <h1>JUS DIFFERENT</h1>
+    <p>marketing psychology · product experiments · growth systems</p>
 
-    <section class="section">
-      <h2 class="h">Stuff I’ve done</h2>
-      <ul class="clean">
-        <li>Performance Marketing Manager at <strong>ClickUp, Canva, Redis, Pinterest, FashionNova</strong>. Managed <strong>$100M+ ad spend</strong>; work contributed to <strong>$100M+ ARR</strong> across portfolios.</li>
-        <li>Built and sold <strong>skipit.ai</strong> for <strong>six figures</strong>.</li>
-        <li>Built consumer apps (<strong>Cuddy, Glaze</strong>) downloaded by <strong>tens of thousands in &lt;24 hours</strong>.</li>
-      </ul>
-    </section>
+    <h2>Stuff I've done</h2>
+    <ul>
+      <li>Performance Marketing Manager at <strong>ClickUp, Canva, Redis, Pinterest, FashionNova</strong>. Managed <strong>$100M+ ad spend</strong>; work contributed to <strong>$100M+ ARR</strong> across portfolios.</li>
+      <li>Built and sold <strong>skipit.ai</strong> for six figures.</li>
+      <li>Built consumer apps (<strong>Cuddy, Glaze</strong>) downloaded by <strong>tens of thousands in &lt;24 hours</strong>.</li>
+    </ul>
 
-    <section class="section">
-      <h2 class="h">Currently working on</h2>
+    <h2>Currently working on</h2>
+    <ul>
+      <li><strong>Cuddy</strong> — consumer social for Gen Z. Choose top-5 friends from contacts → share to IG/Snap stories → trigger “someone put you in their top-5” notifications → paid reveal. Growth via story loops and UGC prompts.</li>
+      <li><strong>DreamHoney</strong> — AI companions with humane guardrails. Freemium chat, voice, and “super-likes”; dopamine-balanced re-engagement at 12/24/48h; no-NSFW policy; retention built on attachment patterns, not shock.</li>
+      <li><strong>Crowd Control</strong> — growth lab for creators/brands. Systematizes hook testing, reply funnels, and bookmark-engineered threads; ships batched experiments, tracks saves/profile-click ratio, and enforces “line-by-line momentum” rules.</li>
+    </ul>
 
-      <div class="block proj">
-        <h3><a href="#" rel="noopener">Cuddy</a></h3>
-        <p class="meta">consumer social • gen z • story loops</p>
-        <p>Choose top-5 friends from contacts → share to IG/Snap stories → trigger “someone put you in their top-5” notifications → paid reveal. Growth via story loops and UGC prompts.</p>
-      </div>
+    <h2>Things I believe</h2>
+    <ul>
+      <li>The crowd doesn’t reason; it reacts. Design for reactions, not lectures.</li>
+      <li>Brands are identities with distribution. Products are proof, not the point.</li>
+      <li>Bookmark value beats virality. If they save it, they’ll share it.</li>
+    </ul>
 
-      <div class="block proj">
-        <h3><a href="#" rel="noopener">DreamHoney</a></h3>
-        <p class="meta">ai companions • humane guardrails • retention</p>
-        <p>Freemium chat, voice, and super-likes. Dopamine-balanced re-engagement at 12/24/48h. No-NSFW policy. Retention built on attachment patterns, not shock.</p>
-      </div>
-
-      <div class="block proj">
-        <h3><a href="#" rel="noopener">Crowd Control</a></h3>
-        <p class="meta">growth lab • hooks • bookmark engineering</p>
-        <p>Systematizes hook testing, reply funnels, and bookmark-engineered threads. Ships batched experiments, tracks saves/profile-click ratio, enforces line-by-line momentum rules.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="h">Things I believe</h2>
-      <ul class="clean">
-        <li>The crowd doesn’t reason; it reacts. Design for reactions, not lectures.</li>
-        <li>Brands are identities with distribution. Products are proof, not the point.</li>
-        <li>Bookmark value beats virality. If they save it, they’ll share it.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2 class="h">TL;DR</h2>
-      <p>I build products, essays, and campaigns that turn attention into obsession.</p>
-    </section>
+    <h2>TL;DR</h2>
+    <p>I build products, essays, and campaigns that turn attention into obsession.</p>
 
     <footer>
-      contact → <a href="https://x.com/USERNAME" target="_blank" rel="noopener">x.com/USERNAME</a> •
-      <a href="#" target="_blank" rel="noopener">newsletter</a> •
-      <a href="mailto:you@domain.com">you@domain.com</a>
+      <p><a href="https://x.com/USERNAME">x.com/USERNAME</a> · <a href="NEWSLETTER_URL">newsletter</a> · <a href="mailto:you@domain.com">you@domain.com</a></p>
     </footer>
   </main>
 </body>
