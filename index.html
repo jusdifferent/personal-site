@@ -5,148 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JUS DIFFERENT</title>
   <meta name="description" content="I build products, essays, and campaigns that turn attention into obsession." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Win98-style fonts -->
   <style>
-    /* ===== Windows 98 Minimal Theme ===== */
-    :root{
-      --bg: #c0c0c0;         /* classic Win98 gray */
-      --text: #000000;       /* black text */
-      --pane: #ffffff;       /* white window surface */
-      --link: #0000EE;       /* Windows link blue */
-      --shadow-dark: #808080;/* dark bevel */
-      --shadow-light: #ffffff;/* light bevel */
-      --maxw: 760px;
-    }
-
-    html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: Tahoma, Verdana, "MS Sans Serif", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.4;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #2a2c33; /* solid background */
+      color: #e6e6e6;
+      line-height: 1.6;
+      font-size: 16px;
     }
-
     main {
-      max-width: var(--maxw);
+      max-width: 720px;
       margin: 0 auto;
-      padding: 24px 12px 48px;
+      padding: 48px 20px;
     }
-
-    /* Title bar look */
-    .titlebar {
-      background: linear-gradient(#000080, #000060);
-      color: #ffffff;
-      padding: 6px 8px;
-      font-weight: bold;
-      display: inline-block;
-      box-shadow:
-        inset 1px 1px 0 0 #4f6fff,
-        inset -1px -1px 0 0 #000020;
-      margin-bottom: 12px;
-    }
-
     h1 {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0 0 8px 0;
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 12px;
     }
-
     h2 {
       font-size: 14px;
-      font-weight: bold;
-      margin: 0 0 8px 0;
-      text-transform: none;
-      letter-spacing: normal;
+      font-weight: 600;
+      margin: 40px 0 12px;
+      text-transform: uppercase;
+      color: #e6e6e6;
+      letter-spacing: 0.05em;
     }
-
-    p, ul { margin: 0 0 8px 0; }
-    ul { padding-left: 18px; }
-
+    p, li {
+      margin: 0 0 12px;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
     a {
-      color: var(--link);
+      color: #9ad1ff;
+      text-decoration: none;
+    }
+    a:hover {
       text-decoration: underline;
     }
-    a:visited { color: #551A8B; } /* classic visited purple */
-    a:focus { outline: 1px dotted #000; outline-offset: 2px; }
-
-    /* Window/pane box */
-    .box {
-      background: var(--pane);
-      border: 2px outset var(--pane);
-      border-color: var(--shadow-light) var(--shadow-dark) var(--shadow-dark) var(--shadow-light);
-      padding: 10px;
-      margin: 16px 0;
-    }
-
-    /* Divider line inside panes */
-    .hr {
-      border: 0;
-      height: 1px;
-      background: var(--shadow-dark);
-      margin: 8px 0;
-    }
-
-    /* Footer */
     footer {
-      margin-top: 16px;
-      color: #202020;
+      margin-top: 48px;
+      font-size: 14px;
+      color: #a0a0a0;
     }
   </style>
 </head>
 <body>
   <main>
-    <!-- Header -->
-    <div class="titlebar">JUS DIFFERENT</div>
     <h1>JUS DIFFERENT</h1>
     <p>marketing psychology · product experiments · growth systems</p>
 
-    <!-- Stuff I've done -->
-    <div class="box">
-      <h2>Stuff I've done</h2>
-      <ul>
-        <li>Performance Marketing Manager at <strong>ClickUp, Canva, Redis, Pinterest, FashionNova</strong>. Managed <strong>$100M+ ad spend</strong>; work contributed to <strong>$100M+ ARR</strong> across portfolios.</li>
-        <li>Built and sold <strong>skipit.ai</strong> for <strong>six figures</strong>.</li>
-        <li>Built consumer apps (<strong>Cuddy, Glaze</strong>) downloaded by <strong>tens of thousands in &lt;24 hours</strong>.</li>
-      </ul>
-    </div>
+    <h2>Stuff I've done</h2>
+    <ul>
+      <li>Performance Marketing Manager at ClickUp, Canva, Redis, Pinterest, FashionNova. Managed <strong>$100M+ ad spend</strong>.</li>
+      <li>Built and sold skipit.ai for six figures.</li>
+      <li>Built consumer apps (Cuddy, Glaze) downloaded by <strong>tens of thousands in &lt;24 hours</strong>.</li>
+    </ul>
 
-    <!-- Currently working on -->
-    <div class="box">
-      <h2>Currently working on</h2>
-      <ul>
-        <li><strong><a href="https://YOUR-CUDDY-LINK.com" target="_blank" rel="noopener">Cuddy</a></strong> — consumer social for Gen Z. Choose top-5 friends from contacts → share to IG/Snap stories → trigger “someone put you in their top-5” notifications → paid reveal. Growth via story loops and UGC prompts.</li>
-        <li><strong><a href="https://YOUR-DREAMHONEY-LINK.com" target="_blank" rel="noopener">DreamHoney</a></strong> — AI companions with humane guardrails. Freemium chat, voice, and “super-likes”; dopamine-balanced re-engagement at 12/24/48h; no-NSFW policy; retention built on attachment patterns, not shock.</li>
-        <li><strong><a href="https://YOUR-CROWD-CONTROL-LINK.com" target="_blank" rel="noopener">Crowd Control</a></strong> — growth lab for creators/brands. Systematizes hook testing, reply funnels, and bookmark-engineered threads; ships batched experiments, tracks saves/profile-click ratio, and enforces “line-by-line momentum” rules.</li>
-      </ul>
-    </div>
+    <h2>Currently working on</h2>
+    <ul>
+      <li><strong><a href="https://cuddyapp.com.com">Cuddy</a></strong> - consumer social for Gen Z to show off their closest friends.
+      <li><strong><a href="https://crowdcontrol.com">Crowd Control</a></strong> - essays
+    </ul>
 
-    <!-- Things I believe -->
-    <div class="box">
-      <h2>Things I believe</h2>
-      <ul>
-        <li>The crowd doesn’t reason; it reacts. Design for reactions, not lectures.</li>
-        <li>Brands are identities with distribution. Products are proof, not the point.</li>
-        <li>Bookmark value beats virality. If they save it, they’ll share it.</li>
-      </ul>
-    </div>
+    <h2>Things I believe</h2>
+    <ul>
+      <li>The crowd doesn’t reason; it reacts. Design for reactions, not lectures.</li>
+      <li>Brands are identities with distribution. Products are proof, not the point.</li>
+      <li>Bookmark value beats virality. If they save it, they’ll share it.</li>
+    </ul>
 
-    <!-- TL;DR -->
-    <div class="box">
-      <h2>TL;DR</h2>
-      <p>I build products, essays, and campaigns that turn attention into obsession.</p>
-    </div>
+    <h2>TL;DR</h2>
+    <p>I build products..</p>
 
-    <!-- Contact -->
-    <footer class="box">
-      <h2>Contact</h2>
-      <p>
-        <a href="https://x.com/USERNAME" target="_blank" rel="noopener">x.com/USERNAME</a> ·
-        <a href="https://YOUR-NEWSLETTER-URL.com" target="_blank" rel="noopener">newsletter</a> ·
-        <a href="mailto:you@domain.com">you@domain.com</a>
-      </p>
+    <footer>
+      <p><a href="https://x.com/jusdifferent99">Twitter</a> · <a href="NEWSLETTER_URL">Newsletter</a> · <a href="jusdifferent999@gmail.com">jusdifferent999@gmail.com</a></p>
     </footer>
   </main>
 </body>
