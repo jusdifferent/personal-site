@@ -42,12 +42,15 @@
       padding-left: 20px;
     }
     a {
-      color: #2b6fe8;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  color: inherit;                 /* same color as text */
+  text-decoration: underline;     /* always underlined */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px; /* slightly heavier on hover */
+}
     footer {
       margin-top: 48px;
       font-size: 14px;
