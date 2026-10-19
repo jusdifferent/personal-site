@@ -8,97 +8,223 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="description" content="I build products, write essays, and campaigns that turn attention into obsession." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f4f4ed" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', system-ui, sans-serif;
-      background: #fbfaf8; /* solid background */
-      color: #111213;
-      line-height: 1.6;
-      font-size: 16px;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 20px;
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin: 175px 0 12px;
-    }
-    h2 {
-      font-size: 14px;
-      font-weight: 600;
-      margin: 40px 0 12px;
-      text-transform: uppercase;
-      color: #111213;
-      letter-spacing: 0.05em;
-    }
-    p, li {
-      margin: 0 0 12px;
-    }
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
-    a {
-  color: #1f33ff;                 /* classic web blue */
-  text-decoration: underline;     /* always underlined */
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Mona+Sans:wdth,wght@75..125,200..900&display=swap" />
+  <!-- Marker face for the handwritten CD label; only these letters are downloaded. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&text=50CENTGetRichorDieTryingBOTLG%27&display=swap" />
+  <link rel="preload" as="image" href="/assets/img/portrait.webp" type="image/webp" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 
-a:hover {
-  text-decoration-thickness: 2px; /* slightly heavier on hover */
-}
-    footer {
-      margin-top: 48px;
-      font-size: 14px;
-      color: #7a7f85;
-    }
-  </style>
+  <script>
+    document.documentElement.classList.add('js');
+    // Never leave the intro or the portrait hidden if a script fails to load.
+    setTimeout(function () { document.documentElement.classList.add('ready'); }, 3000);
+    setTimeout(function () {
+      var root = document.documentElement;
+      if (!root.classList.contains('gl')) root.classList.add('no-gl');
+    }, 4000);
+  </script>
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js" } }</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script type="module" src="/assets/js/hero.js"></script>
+  <script defer src="/assets/js/site.js"></script>
 </head>
 <body>
-  <main>
-    <h1>COMPETITION IS A SIN</h1>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <h2>Stuff I've done</h2>
-    <ul>
-      <li>Managed <strong>$100M+</strong> in paid ads across Wiz, ClickUp, Redis, Zoom, Pinterest, and Own.</li>
-      <li>Built and sold skipit.ai for six figures.</li>
-      <li>Built consumer apps that got 10k downloads in &lt; 24 hours.</li>
-      <li>Helped content creators, music artists, and brands grow from 0 to 300k+ followers on IG.</li>
-      <li>Sold 50 cent 'get rich or die trying' bootleg CDs in 6th grade</li>
-      <li>Worked in flea markets with my dad from elementary to high school</li>
+  <!-- One WebGL canvas sits behind the whole page: contour lines, the portrait and the cursor reveal. -->
+  <canvas class="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav" data-theme="light">
+    <a class="nav__logo intro" href="#top" aria-label="Jus Different, back to top">
+      <span class="nav__logo-serif">Jus</span>
+      <span class="nav__logo-sans">Different</span>
+    </a>
+    <a class="nav__mark intro" href="#top" aria-hidden="true" tabindex="-1">JD<span>.</span></a>
+    <div class="nav__actions intro">
+      <a class="btn-lime" href="mailto:jusdifferent999@gmail.com">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12v9H2z M2 4l6 4.8L14 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="roll" data-text="Say hi"><span>Say hi</span></span>
+      </a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Site" hidden>
+    <ul class="menu__links">
+      <li><a href="#top"><span class="menu__n">01</span><span class="roll" data-text="Home"><span>Home</span></span></a></li>
+      <li><a href="#record"><span class="menu__n">02</span><span class="roll" data-text="Track record"><span>Track record</span></span></a></li>
+      <li><a href="#building"><span class="menu__n">03</span><span class="roll" data-text="Now building"><span>Now building</span></span></a></li>
+      <li><a href="#beliefs"><span class="menu__n">04</span><span class="roll" data-text="Beliefs"><span>Beliefs</span></span></a></li>
+      <li><a href="#story"><span class="menu__n">05</span><span class="roll" data-text="Where it started"><span>Where it started</span></span></a></li>
+      <li><a href="#contact"><span class="menu__n">06</span><span class="roll" data-text="Say hi"><span>Say hi</span></span></a></li>
     </ul>
+    <div class="menu__foot">
+      <a href="https://x.com/jusdifferent99">Twitter / X ↗</a>
+      <a href="mailto:jusdifferent999@gmail.com">jusdifferent999@gmail.com</a>
+    </div>
+  </nav>
 
-    <h2>Currently working on</h2>
-    <ul>
-      <li><a href="https://cuddyapp.com">Cuddy</a> - Consumer social for Gen Z to show off their closest friends.</li>
-      <li><a href="https://crowdcontrol.blog">Crowd Control (coming soon)</a> - Marketing and Psychology essays</li>
-    </ul>
+  <main id="main">
+    <section class="hero" id="top" data-theme="light">
+      <h1 class="sr-only">Jus Different. I build products, write essays, and run campaigns that turn attention into obsession.</h1>
+      <div class="hero__title intro" aria-hidden="true">
+        <p class="hero__name"><span>Jus</span> Different</p>
+        <p class="hero__sub">Building since 6th grade</p>
+      </div>
+      <div class="hero__figure" data-portrait>
+        <img class="hero__img" src="/assets/img/portrait.webp" alt="Illustrated portrait of Jus Different" width="1200" height="1200" />
+      </div>
 
-    <h2>Things I believe</h2>
-    <ul>
-      <li>Attention and trust is all you need</li>
-      <li>Do what the best version of you would do</li>
-      <li>Forget about being liked or hated. Be impossible to ignore</li>
-      <li>Don’t make decisions based on fear</li>
-      <li>Keep your child-like wonder and creativity</li>
-      <li>Nobody cares about your excuses. Work harder</li>
-      <li>The most important thing is how you talk to yourself</li>
-      <li>Method act like the person you want to become</li>
-      <li>Focus on pleasing God, not people</li>
-    </ul>
+      <a class="now-card intro" href="https://cuddyapp.com">
+        <span class="now-card__label">Now building</span>
+        <span class="now-card__name">Cuddy</span>
+        <span class="now-card__desc">Consumer social for Gen Z</span>
+        <span class="now-card__foot">cuddyapp.com ↗</span>
+      </a>
+      <p class="hero__hint intro" aria-hidden="true"><span class="hero__hint-desk">Move your cursor over me</span><span class="hero__hint-touch">Touch &amp; drag over me</span></p>
+      <p class="hero__scroll intro" aria-hidden="true">Scroll <span></span></p>
+    </section>
 
-    <h2>TL;DR</h2>
-    <p>I build.</p>
+    <section class="sin" data-theme="dark" aria-label="Competition is a sin">
+      <div class="sin__rows" aria-hidden="true">
+        <div class="row row--serif"><div class="row__track">Competition is a sin — Competition is a sin — Competition is a sin — Competition is a sin —</div></div>
+        <div class="row row--sans"><div class="row__track">Jus different — Jus different — Jus different — Jus different — Jus different —</div></div>
+        <div class="row row--serif"><div class="row__track">Be impossible to ignore — Be impossible to ignore — Be impossible to ignore —</div></div>
+      </div>
+      <figure class="sin__card">
+        <img src="/assets/img/portrait.webp" alt="" width="1200" height="1200" loading="lazy" />
+      </figure>
+      <svg class="sig" viewBox="0 0 600 340" aria-hidden="true">
+        <path pathLength="1" d="M262 38 C258 96 248 168 232 226 C220 270 196 300 160 298 C122 296 112 258 146 240 C176 224 214 230 238 214 C252 205 262 188 268 170 C266 196 262 222 276 226 C292 230 302 200 310 172 C308 198 306 224 322 224 C336 224 344 206 352 194 C360 182 378 178 380 192 C382 206 360 214 362 228 C364 244 392 242 404 228"/>
+        <path pathLength="1" d="M88 276 C190 246 330 214 470 176 C510 165 548 150 578 132"/>
+        <path pathLength="1" d="M420 92 C452 82 470 108 452 132 C440 148 418 156 398 160 C412 128 424 96 432 64"/>
+      </svg>
+      <h2 class="sr-only">Competition is a sin</h2>
+    </section>
 
-    <footer>
-      <p><a href="https://x.com/jusdifferent99">Twitter</a> · <a href="mailto:jusdifferent999@gmail.com">jusdifferent999@gmail.com</a></p>
+    <section class="statement" data-theme="dark">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="badge-ring" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
+          <text><textPath href="#badge-ring" textLength="286" lengthAdjust="spacing">Hustling since 6th grade ✦ </textPath></text>
+        </svg>
+        <span class="badge__cd"></span>
+      </div>
+      <p class="statement__text split">
+        I <em>build</em> products, write <em>essays</em>, and run campaigns that turn <em>attention</em> into <em>obsession</em>.
+      </p>
+    </section>
+
+    <section class="record" id="record" data-theme="light">
+      <h2 class="title split"><em>Track</em> record</h2>
+      <div class="stats">
+        <article class="stat">
+          <p class="stat__num"><span data-count="100" data-prefix="$" data-suffix="M+">$100M+</span></p>
+          <h3 class="stat__title">Managed in paid ads</h3>
+          <p class="stat__text">Across Wiz, ClickUp, Redis, Zoom, Pinterest, and Own.</p>
+        </article>
+        <article class="stat">
+          <p class="stat__num">6 <em>figures</em></p>
+          <h3 class="stat__title">skipit.ai exit</h3>
+          <p class="stat__text">Built and sold skipit.ai for six figures.</p>
+        </article>
+        <article class="stat">
+          <p class="stat__num"><span data-count="10" data-suffix="K">10K</span></p>
+          <h3 class="stat__title">Consumer apps</h3>
+          <p class="stat__text">Built consumer apps that got 10k downloads in &lt; 24 hours.</p>
+        </article>
+        <article class="stat">
+          <p class="stat__num"><span data-count="300" data-suffix="K+">300K+</span></p>
+          <h3 class="stat__title">Instagram growth</h3>
+          <p class="stat__text">Helped content creators, music artists, and brands grow from 0 to 300k+ followers on IG.</p>
+        </article>
+      </div>
+      <div class="ticker" aria-label="Brands I've run paid ads for">
+        <div class="ticker__track">
+          <span>Wiz</span><span>ClickUp</span><span>Redis</span><span>Zoom</span><span>Pinterest</span><span>Own</span>
+          <span aria-hidden="true">Wiz</span><span aria-hidden="true">ClickUp</span><span aria-hidden="true">Redis</span><span aria-hidden="true">Zoom</span><span aria-hidden="true">Pinterest</span><span aria-hidden="true">Own</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="building" id="building" data-theme="dark">
+      <h2 class="title split">Now <em>building</em></h2>
+      <ul class="projects">
+        <li>
+          <a class="project" href="https://cuddyapp.com">
+            <span class="project__n">01</span>
+            <span class="project__name">Cuddy</span>
+            <span class="project__desc">Consumer social for Gen Z to show off their closest friends.</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://crowdcontrol.blog">
+            <span class="project__n">02</span>
+            <span class="project__name">Crowd Control <span class="tag">Coming soon</span></span>
+            <span class="project__desc">Marketing and psychology essays.</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="beliefs" id="beliefs" data-theme="light">
+      <h2 class="title split">Things I <em>believe</em></h2>
+      <ol class="beliefs__list">
+        <li><span class="beliefs__n">01</span><span class="beliefs__t">Attention and trust is all you need</span></li>
+        <li><span class="beliefs__n">02</span><span class="beliefs__t">Do what the best version of you would do</span></li>
+        <li><span class="beliefs__n">03</span><span class="beliefs__t">Forget about being liked or hated. Be impossible to ignore</span></li>
+        <li><span class="beliefs__n">04</span><span class="beliefs__t">Don’t make decisions based on fear</span></li>
+        <li><span class="beliefs__n">05</span><span class="beliefs__t">Keep your child-like wonder and creativity</span></li>
+        <li><span class="beliefs__n">06</span><span class="beliefs__t">Nobody cares about your excuses. Work harder</span></li>
+        <li><span class="beliefs__n">07</span><span class="beliefs__t">The most important thing is how you talk to yourself</span></li>
+        <li><span class="beliefs__n">08</span><span class="beliefs__t">Method act like the person you want to become</span></li>
+        <li><span class="beliefs__n">09</span><span class="beliefs__t">Focus on pleasing God, not people</span></li>
+      </ol>
+    </section>
+
+    <section class="story" id="story" data-theme="dark">
+      <h2 class="title split">Where it <em>started</em></h2>
+      <div class="story__grid">
+        <div class="cd-wrap" aria-hidden="true">
+          <div class="cd">
+            <span class="cd__label">50 Cent<br />Get Rich or Die Trying<br /><small>BOOTLEG</small></span>
+          </div>
+        </div>
+        <div class="story__items">
+          <article class="story__item">
+            <p class="eyebrow">6th grade</p>
+            <p class="story__line">Sold 50 Cent ‘Get Rich or Die Trying’ bootleg CDs in 6th grade.</p>
+          </article>
+          <article class="story__item">
+            <p class="eyebrow">Elementary to high school</p>
+            <p class="story__line">Worked in flea markets with my dad from elementary to high school.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tldr" id="contact" data-theme="lime">
+      <p class="eyebrow">TL;DR</p>
+      <p class="tldr__big split-chars">I build.</p>
+      <div class="tldr__links">
+        <a class="btn-dark" href="mailto:jusdifferent999@gmail.com"><span class="roll" data-text="jusdifferent999@gmail.com"><span>jusdifferent999@gmail.com</span></span></a>
+        <a class="btn-line" href="https://x.com/jusdifferent99"><span class="roll" data-text="Twitter / X ↗"><span>Twitter / X ↗</span></span></a>
+      </div>
+      <div class="tldr__bottom">
+        <span>© <span data-year>2026</span> Jus Different</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </main>
 </body>
