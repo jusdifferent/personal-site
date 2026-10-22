@@ -961,20 +961,13 @@ html.no-gl .hero__hint { display: none; }
   text-align: center;
 }
 .project__desc { max-width: 40ch; }
+.building .title { margin-bottom: clamp(20px, 2.5vw, 36px); }
+.project { padding-top: clamp(18px, 2vw, 28px); padding-bottom: clamp(22px, 2.6vw, 36px); }
+.project .tag { transform: none; }
 .project__arrow { display: none; }
 
-.beliefs__list li { grid-template-columns: 1fr; justify-items: center; gap: 6px; text-align: center; }
-.beliefs__t { justify-self: center; }
 
-.story__grid {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: clamp(40px, 5vw, 72px);
-  max-width: 760px;
-  text-align: center;
-}
-.cd { width: min(70vw, 320px); }
-.story__items { width: 100%; }
+.story__grid { gap: clamp(32px, 5vw, 80px); }
 
 .menu { align-items: center; text-align: center; }
 .menu__links a { justify-content: center; }
@@ -988,7 +981,6 @@ html.no-gl .hero__hint { display: none; }
 
 @media (max-width: 900px) {
   .stat, .stat:first-child, .stat:nth-child(3) { padding-left: 16px; padding-right: 16px; }
-  .story__items { text-align: center; }
 }
 @media (max-width: 640px) {
   .stat, .stat:first-child, .stat:nth-child(3) { padding-left: 0; padding-right: 0; }
