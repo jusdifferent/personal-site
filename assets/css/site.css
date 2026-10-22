@@ -270,7 +270,7 @@ a:focus-visible .roll::after { transform: translateY(-100%); }
   align-items: baseline;
   gap: 18px;
   padding: 4px 0;
-  font-size: clamp(40px, 7.4vw, 112px);
+  font-size: clamp(32px, 5.9vw, 90px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.035em;
@@ -477,7 +477,7 @@ html.no-gl .hero__hint { display: none; }
 
 .title {
   margin: 0 0 clamp(40px, 6vw, 96px);
-  font-size: clamp(54px, 10.5vw, 188px);
+  font-size: clamp(43px, 8.4vw, 150px);
   font-weight: 800;
   line-height: 0.86;
   letter-spacing: -0.04em;
@@ -615,7 +615,7 @@ html.no-gl .hero__hint { display: none; }
 .statement__text {
   max-width: 14.5em;
   margin: 0 auto;
-  font-size: clamp(36px, 6.3vw, 118px);
+  font-size: clamp(29px, 5vw, 94px);
   font-weight: 750;
   line-height: 0.92;
   letter-spacing: -0.035em;
@@ -639,7 +639,7 @@ html.no-gl .hero__hint { display: none; }
 .stat:last-child { border-right: 0; }
 .stat__num {
   margin: 0 0 30px;
-  font-size: clamp(50px, 6.2vw, 112px);
+  font-size: clamp(40px, 5vw, 90px);
   font-weight: 800;
   font-stretch: 92%;
   line-height: 0.9;
@@ -678,7 +678,7 @@ html.no-gl .hero__hint { display: none; }
   display: flex;
   align-items: center;
   padding: 18px 0;
-  font-size: clamp(30px, 4.2vw, 64px);
+  font-size: clamp(24px, 3.4vw, 51px);
   font-weight: 800;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -731,7 +731,7 @@ html.no-gl .hero__hint { display: none; }
 .project:focus-visible::before { transform: scaleY(1); }
 .project__n { font-family: var(--serif); font-size: 22px; }
 .project__name {
-  font-size: clamp(40px, 6.2vw, 108px);
+  font-size: clamp(32px, 5vw, 86px);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -786,7 +786,7 @@ html.no-gl .hero__hint { display: none; }
 }
 .beliefs__t {
   justify-self: start;
-  font-size: clamp(25px, 3.5vw, 60px);
+  font-size: clamp(20px, 2.8vw, 48px);
   font-weight: 750;
   line-height: 0.98;
   letter-spacing: -0.03em;
@@ -809,7 +809,7 @@ html.no-gl .hero__hint { display: none; }
 .cd-wrap { display: grid; place-items: center; }
 .cd {
   position: relative;
-  width: min(100%, 470px);
+  width: min(100%, 376px);
   aspect-ratio: 1;
   border-radius: 50%;
   background:
@@ -845,7 +845,7 @@ html.no-gl .hero__hint { display: none; }
 .story__line {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(30px, 3.5vw, 58px);
+  font-size: clamp(24px, 2.8vw, 46px);
   line-height: 1.02;
   color: var(--cream);
 }
@@ -861,7 +861,7 @@ html.no-gl .hero__hint { display: none; }
 .tldr .eyebrow { color: var(--green); }
 .tldr__big {
   margin: 0 0 clamp(36px, 5vw, 72px) -0.03em;
-  font-size: clamp(96px, 23vw, 470px);
+  font-size: clamp(77px, 18.4vw, 376px);
   font-weight: 900;
   font-stretch: 110%;
   line-height: 0.8;
@@ -941,4 +941,56 @@ html.no-gl .hero__hint { display: none; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* ---------- Centred, compact reading column ----------
+   Content sits in one centred column so the eye stays near the middle. */
+
+.stats, .projects, .beliefs__list, .story__grid {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stat, .stat:first-child { padding-left: 24px; padding-right: 24px; text-align: center; }
+.stat__text { margin: 0 auto; }
+
+.project {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.project__desc { max-width: 40ch; }
+.project__arrow { display: none; }
+
+.beliefs__list li { grid-template-columns: 1fr; justify-items: center; gap: 6px; text-align: center; }
+.beliefs__t { justify-self: center; }
+
+.story__grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: clamp(40px, 5vw, 72px);
+  max-width: 760px;
+  text-align: center;
+}
+.cd { width: min(70vw, 320px); }
+.story__items { width: 100%; }
+
+.menu { align-items: center; text-align: center; }
+.menu__links a { justify-content: center; }
+.menu__n { display: none; }
+.menu__foot { justify-content: center; }
+
+.tldr { text-align: center; }
+.tldr__big { margin-left: 0; }
+.tldr__links { justify-content: center; }
+.tldr__bottom { justify-content: center; gap: 32px; }
+
+@media (max-width: 900px) {
+  .stat, .stat:first-child, .stat:nth-child(3) { padding-left: 16px; padding-right: 16px; }
+  .story__items { text-align: center; }
+}
+@media (max-width: 640px) {
+  .stat, .stat:first-child, .stat:nth-child(3) { padding-left: 0; padding-right: 0; }
+  .tldr__bottom { align-items: center; }
 }
