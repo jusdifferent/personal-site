@@ -357,6 +357,8 @@ html.gl .hero__img { opacity: 0; }
 
 /* SplitText line masks */
 .split .line-mask, .split-chars .char-mask { padding-bottom: 0.08em; margin-bottom: -0.08em; }
+/* Tight tracking makes glyphs wider than their boxes; give each letter mask room on the right. */
+.split-chars > div { padding: 0 0.1em 0.08em 0; margin: 0 -0.1em -0.08em 0; }
 
 /* ---------- Statement ---------- */
 
