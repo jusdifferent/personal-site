@@ -986,3 +986,19 @@ html.no-gl .hero__hint { display: none; }
   .stat, .stat:first-child, .stat:nth-child(3) { padding-left: 0; padding-right: 0; }
   .tldr__bottom { align-items: center; }
 }
+
+/* Eight stats: two rows of four on desktop, two columns on tablets. */
+.stat:nth-child(4n) { border-right: 0; }
+.stat:nth-child(n + 5) { border-top: 1px solid var(--line-light); }
+@media (max-width: 900px) {
+  .stat:nth-child(2n) { border-right: 0; }
+  .stat:nth-child(2n + 1) { border-right: 1px solid var(--line-light); }
+}
+@media (max-width: 640px) {
+  .stat:nth-child(2n + 1) { border-right: 0; }
+}
+@media (max-width: 900px) {
+  /* Keep the centred single-column project rows on smaller screens. */
+  .project { grid-template-columns: 1fr; }
+  .project__desc { grid-column: auto; }
+}
