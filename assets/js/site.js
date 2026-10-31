@@ -123,30 +123,6 @@
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
   });
 
-  // ---------- Competition is a sin ----------
-
-  gsap.utils.toArray('.sin .row__track').forEach((track, i) => {
-    const forward = i % 2 === 0;
-    gsap.fromTo(track, { xPercent: forward ? 0 : -30 }, {
-      xPercent: forward ? -30 : 0,
-      ease: 'none',
-      scrollTrigger: { trigger: '.sin', start: 'top bottom', end: 'bottom top', scrub: true },
-    });
-  });
-
-  gsap.from('.sin__card', {
-    scale: 0.72,
-    ease: 'none',
-    scrollTrigger: { trigger: '.sin', start: 'top bottom', end: 'center center', scrub: true },
-  });
-
-  const signature = gsap.timeline({
-    scrollTrigger: { trigger: '.sin', start: 'top 45%', end: 'center 30%', scrub: 0.6 },
-  });
-  gsap.utils.toArray('.sig path').forEach((path, i) => {
-    signature.to(path, { strokeDashoffset: 0, ease: 'none', duration: [1.6, 0.9, 0.6][i] ?? 1 });
-  });
-
   // ---------- Headlines rise line by line ----------
 
   if (SplitText) {
