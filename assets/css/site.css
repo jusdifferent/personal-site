@@ -302,7 +302,6 @@ a:focus-visible .roll::after { transform: translateY(-100%); }
 /* ---------- Hero ---------- */
 
 .hero {
-  --hero-type: clamp(44px, 7.6vw, 150px);
   position: relative;
   height: 100vh;
   height: 100svh;
@@ -329,23 +328,6 @@ a:focus-visible .roll::after { transform: translateY(-100%); }
 .js .hero__img { opacity: 0; }
 html.no-gl .hero__img { opacity: 1; }
 html.gl .hero__img { opacity: 0; }
-
-/* Across the bottom of the portrait, like a poster title. */
-.hero__title {
-  position: absolute;
-  bottom: clamp(32px, 7vh, 80px);
-  left: var(--gutter);
-  right: var(--gutter);
-  z-index: 2;
-  margin: 0;
-  font-size: var(--hero-type);
-  font-weight: 800;
-  line-height: 0.86;
-  letter-spacing: -0.04em;
-  text-align: center;
-  text-transform: uppercase;
-  pointer-events: none;
-}
 
 /* ---------- Shared section bits ---------- */
 
@@ -653,12 +635,7 @@ html.gl .hero__img { opacity: 0; }
 @media (max-width: 640px) {
   .btn-lime { height: 40px; padding: 0 13px; }
   .nav__menu { width: 40px; height: 40px; }
-  /* Two stacked lines above the portrait on phones. */
-  .hero { --hero-type: 14vw; }
-  .hero__title { top: calc(var(--gutter) + 60px); bottom: auto; }
-  .hero__title em { display: block; }
-  /* Only short phones shrink the portrait, so the hair stays clear of the headline. */
-  .hero__figure { width: min(180vw, 92svh, calc(100svh - 2 * var(--hero-type) - 20px)); }
+  .hero__figure { width: min(180vw, 92svh); }
   .stats { grid-template-columns: 1fr; }
   .stat, .stat:first-child, .stat:nth-child(3) { padding: 22px 0 32px; border-right: 0; }
   .stat + .stat { border-top: 1px solid var(--line-light); }

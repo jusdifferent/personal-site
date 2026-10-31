@@ -113,7 +113,6 @@
   // ---------- Intro ----------
 
   gsap.from('.nav .intro', { yPercent: -80, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: 0.08, delay: 0.5 });
-  gsap.from('.hero .intro', { y: 24, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: 0.1, delay: 1.4 });
 
   // ---------- Hero ----------
 
