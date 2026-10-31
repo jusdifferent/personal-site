@@ -310,12 +310,11 @@ a:focus-visible .roll::after { transform: translateY(-100%); }
   overflow: hidden;
 }
 
-/* The portrait shrinks just enough to sit under the headline. */
 .hero__figure {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: min(calc(100svh - var(--hero-type) - 70px), 150vw);
+  width: min(100svh, 150vw);
   aspect-ratio: 1;
   translate: -50% 0;
 }
@@ -331,9 +330,10 @@ a:focus-visible .roll::after { transform: translateY(-100%); }
 html.no-gl .hero__img { opacity: 1; }
 html.gl .hero__img { opacity: 0; }
 
+/* Across the bottom of the portrait, like a poster title. */
 .hero__title {
   position: absolute;
-  top: calc(var(--gutter) + 64px);
+  bottom: clamp(32px, 7vh, 80px);
   left: var(--gutter);
   right: var(--gutter);
   z-index: 2;
@@ -346,7 +346,6 @@ html.gl .hero__img { opacity: 0; }
   text-transform: uppercase;
   pointer-events: none;
 }
-
 
 /* ---------- Shared section bits ---------- */
 
@@ -654,11 +653,12 @@ html.gl .hero__img { opacity: 0; }
 @media (max-width: 640px) {
   .btn-lime { height: 40px; padding: 0 13px; }
   .nav__menu { width: 40px; height: 40px; }
-  /* Two stacked lines on phones, with the portrait below them. */
+  /* Two stacked lines above the portrait on phones. */
   .hero { --hero-type: 14vw; }
-  .hero__title { top: calc(var(--gutter) + 60px); }
+  .hero__title { top: calc(var(--gutter) + 60px); bottom: auto; }
   .hero__title em { display: block; }
-  .hero__figure { width: min(180vw, calc(100svh - 2 * var(--hero-type) - 20px)); }
+  /* Only short phones shrink the portrait, so the hair stays clear of the headline. */
+  .hero__figure { width: min(180vw, 92svh, calc(100svh - 2 * var(--hero-type) - 20px)); }
   .stats { grid-template-columns: 1fr; }
   .stat, .stat:first-child, .stat:nth-child(3) { padding: 22px 0 32px; border-right: 0; }
   .stat + .stat { border-top: 1px solid var(--line-light); }
