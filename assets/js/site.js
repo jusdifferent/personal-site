@@ -87,7 +87,7 @@
       const box = section.getBoundingClientRect();
       if (box.top <= probe && box.bottom > probe) {
         theme = section.dataset.theme === 'dark' ? 'dark' : 'light';
-        if (themeMeta) themeMeta.content = { dark: '#282c20', lime: '#4cbb17' }[section.dataset.theme] || '#f4f4ed';
+        if (themeMeta) themeMeta.content = { dark: '#282c20', lime: '#f2e3b3' }[section.dataset.theme] || '#f4f4ed';
         break;
       }
     }

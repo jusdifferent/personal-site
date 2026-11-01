@@ -1,7 +1,7 @@
 // One fixed WebGL canvas paints the page behind the content:
 //   - drifting contour lines, in each section's light or dark theme
 //   - the hero portrait, which rises in on load
-//   - a liquid cursor trail that reveals a kelly green halftone version of the portrait
+//   - a liquid cursor trail that reveals a butter halftone version of the portrait
 import * as THREE from 'three';
 
 const root = document.documentElement;
@@ -126,7 +126,7 @@ const MAIN_FRAGMENT = /* glsl */ `
   const vec3 DARK = vec3(0.157, 0.173, 0.125);        // #282c20
   const vec3 DARK_FILL = vec3(0.180, 0.196, 0.149);
   const vec3 SAGE = vec3(0.867, 0.882, 0.824);        // #dde1d2
-  const vec3 LIME = vec3(0.298, 0.733, 0.09);          // #4cbb17
+  const vec3 LIME = vec3(0.949, 0.89, 0.702);          // #f2e3b3
 
   ${NOISE}
 
@@ -179,7 +179,7 @@ const MAIN_FRAGMENT = /* glsl */ `
     vec3 col = mix(mix(LIGHT, DARK, th), mix(LIGHT_FILL, DARK_FILL, th), fillMask);
     col = mix(col, mix(DARK, SAGE, th), lines * mix(0.15, 0.07, th));
 
-    // Portrait, rising in through a noisy edge with a kelly green rim.
+    // Portrait, rising in through a noisy edge with a butter rim.
     vec2 pr = (css - uRect.xy) / uRect.zw;
     vec4 por = portraitAt(pr) * step(css.y, uClip);
     float n1 = snoise(vec3(pr * 4.0, uTime * 0.3));
