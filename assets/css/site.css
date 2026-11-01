@@ -1,6 +1,6 @@
 /* ==========================================================================
    Jus Different
-   Off-white and olive pages, lime accents, Mona Sans with Instrument Serif.
+   Off-white and olive pages, kelly green accents, Mona Sans with Instrument Serif.
    ========================================================================== */
 
 :root {
@@ -11,8 +11,8 @@
   --green-3: #535450;
   --sage-1: #dde1d2;
   --sage-2: #b4b8a5;
-  --lime: #d2ff00;
-  --lime-off: #b2c73a;
+  --lime: #4cbb17;
+  --lime-off: #3f9e14;
 
   --sans: "Mona Sans", "Helvetica Neue", Arial, sans-serif;
   --serif: "Instrument Serif", "Times New Roman", serif;
